@@ -34,7 +34,7 @@ const Note2 = () => {
 
   const saveDate = async (value: Array<{item: string}>) => {
     try {
-      await AsyncStorage.setItem('database', JSON.stringify(value));
+      await AsyncStorage.setItem('database2', JSON.stringify(value));
     } catch (o) {
       console.log('save data error', o);
     }
@@ -42,7 +42,7 @@ const Note2 = () => {
 
   const getData = async () => {
     try {
-      let value = await AsyncStorage.getItem('database');
+      let value = await AsyncStorage.getItem('database2');
       if (value !== null) {
         const perseValue = JSON.parse(value);
         console.log(perseValue);
