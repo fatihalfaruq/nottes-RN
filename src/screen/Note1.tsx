@@ -7,6 +7,10 @@ import {
   ScrollView,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface item {
@@ -81,7 +85,7 @@ const Note1 = () => {
       }}>
       <Text
         style={{
-          fontSize: 26,
+          fontSize: wp('7%'),
           fontFamily: 'Anton-Regular',
           color: 'blue',
           top: 8,
@@ -91,8 +95,8 @@ const Note1 = () => {
       <View
         style={{
           backgroundColor: '#C5E1A5',
-          width: 350,
-          height: 600,
+          width: wp('90%'),
+          height: hp('75%'),
           top: 20,
           borderRadius: 30,
           borderWidth: 10,
@@ -107,6 +111,7 @@ const Note1 = () => {
                 width: 300,
               }}>
               <TouchableOpacity
+                key={index}
                 onPress={() => {
                   setText(value.item);
                   setIndex(index);
@@ -119,12 +124,13 @@ const Note1 = () => {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity
-                onPress={() => {
-                  setIndex(index);
-                  deleteData();
-                }}>
-                <View>
+              <View>
+                <TouchableOpacity
+                  style={{width: 30, height: 30}}
+                  onPress={() => {
+                    setIndex(index);
+                    deleteData();
+                  }}>
                   <Text
                     style={{
                       fontSize: 25,
@@ -135,8 +141,8 @@ const Note1 = () => {
                     }}>
                     x
                   </Text>
-                </View>
-              </TouchableOpacity>
+                </TouchableOpacity>
+              </View>
             </View>
           ))}
         </ScrollView>
@@ -146,55 +152,65 @@ const Note1 = () => {
           position: 'absolute',
           bottom: 20,
           left: 42,
-          width: 350,
+          width: wp('81%'),
           borderRadius: 30,
           flexDirection: 'row',
           alignItems: 'center',
           backgroundColor: '#B2FF59',
-          height: 50,
+          height: hp('6%'),
         }}>
         <TextInput
-          style={{left: 20, position: 'absolute', width: 250}}
+          style={{left: 20, position: 'absolute', width: wp('60%')}}
           value={text}
           onChangeText={f => setText(f)}
           placeholder="Mulai catat"
         />
         {editMode ? (
-          <TouchableOpacity
-            onPress={() => (editMode ? editData() : create(text))}>
-            <View
-              style={{
-                backgroundColor: '#448AFF',
-                width: 60,
-                height: 40,
-                alignItems: 'center',
-                justifyContent: 'center',
-                left: 285,
-                borderRadius: 20,
-              }}>
-              <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}>
+          <View
+            style={{
+              backgroundColor: '#448AFF',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: wp('14%'),
+              height: hp('5%'),
+              left: wp('66%'),
+              borderRadius: 20,
+            }}>
+            <TouchableOpacity
+              onPress={() => (editMode ? editData() : create(text))}>
+              <Text
+                style={{
+                  fontSize: wp('5%'),
+                  fontWeight: 'bold',
+                  color: 'white',
+                }}>
                 edit
               </Text>
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
         ) : (
-          <TouchableOpacity
-            onPress={() => (editMode ? editData() : create(text))}>
-            <View
-              style={{
-                backgroundColor: '#448AFF',
-                width: 60,
-                height: 40,
-                alignItems: 'center',
-                justifyContent: 'center',
-                left: 285,
-                borderRadius: 20,
-              }}>
-              <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}>
+          <View
+            style={{
+              backgroundColor: '#448AFF',
+              width: wp('14%'),
+              height: hp('5%'),
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 20,
+              left: wp('66%'),
+            }}>
+            <TouchableOpacity
+              onPress={() => (editMode ? editData() : create(text))}>
+              <Text
+                style={{
+                  fontSize: wp('5%'),
+                  fontWeight: 'bold',
+                  color: 'white',
+                }}>
                 input
               </Text>
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
         )}
       </View>
     </View>

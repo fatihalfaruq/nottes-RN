@@ -9,6 +9,10 @@ import {
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import {Pindah} from '../../App';
 
 const Homeapp = () => {
@@ -16,22 +20,21 @@ const Homeapp = () => {
   return (
     <View
       style={{
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#B2FF59',
-        height: '100%',
+        flex: 1,
       }}>
       <View
         style={{
           backgroundColor: '#00FF2A',
-          width: '100%',
+          width: wp('100%'),
           justifyContent: 'center',
           alignItems: 'center',
-          height: 50,
+          height: hp('10%'),
           flexDirection: 'row',
           bottom: 20,
         }}>
-        <Text style={{fontSize: 25, fontWeight: 'bold', color: '#1A237E'}}>
+        <Text
+          style={{fontSize: wp('7%'), fontWeight: 'bold', color: '#1A237E'}}>
           nottes
         </Text>
         <Image
@@ -47,20 +50,21 @@ const Homeapp = () => {
         <View
           style={{
             backgroundColor: '#C5E1A5',
-            width: 370,
-            height: 100,
             borderRadius: 20,
+            width: wp('90'),
+            height: hp('10'),
             flexDirection: 'row',
             alignItems: 'center',
             margin: 20,
           }}>
           <Image
-            style={{width: 80, height: 80, left: 10}}
+            style={{width: wp('20%'), height: hp('10%'), left: 10}}
             source={require('../assets/icon/writing.png')}
           />
           <Text
             style={{
-              fontSize: 25,
+              fontSize: wp('7%'),
+
               left: 30,
               fontWeight: 'bold',
               color: '#1A237E',
@@ -73,20 +77,20 @@ const Homeapp = () => {
         <View
           style={{
             backgroundColor: '#C5E1A5',
-            width: 370,
-            height: 100,
+            width: wp('90'),
+            height: hp('10'),
             borderRadius: 20,
             flexDirection: 'row',
             alignItems: 'center',
             margin: 20,
           }}>
           <Image
-            style={{width: 80, height: 80, left: 10}}
+            style={{width: wp('20%'), height: hp('10%'), left: 10}}
             source={require('../assets/icon/writing.png')}
           />
           <Text
             style={{
-              fontSize: 25,
+              fontSize: wp('7%'),
               left: 30,
               fontWeight: 'bold',
               color: '#1A237E',
@@ -99,20 +103,21 @@ const Homeapp = () => {
         <View
           style={{
             backgroundColor: '#C5E1A5',
-            width: 370,
-            height: 100,
+            width: wp('90'),
+            height: hp('10'),
             borderRadius: 20,
             flexDirection: 'row',
             alignItems: 'center',
             margin: 20,
           }}>
           <Image
-            style={{width: 80, height: 80, left: 10}}
+            style={{width: wp('20%'), height: hp('10%'), left: 10}}
             source={require('../assets/icon/writing.png')}
           />
           <Text
             style={{
-              fontSize: 25,
+              fontSize: wp('7%'),
+
               left: 30,
               fontWeight: 'bold',
               color: '#1A237E',
@@ -125,20 +130,21 @@ const Homeapp = () => {
         <View
           style={{
             backgroundColor: '#C5E1A5',
-            width: 370,
-            height: 100,
+            width: wp('90'),
+            height: hp('10'),
             borderRadius: 20,
             flexDirection: 'row',
             alignItems: 'center',
             margin: 20,
           }}>
           <Image
-            style={{width: 80, height: 80, left: 10}}
+            style={{width: wp('20%'), height: hp('10%'), left: 10}}
             source={require('../assets/icon/writing.png')}
           />
           <Text
             style={{
-              fontSize: 25,
+              fontSize: wp('7%'),
+
               left: 30,
               fontWeight: 'bold',
               color: '#1A237E',
@@ -151,20 +157,21 @@ const Homeapp = () => {
         <View
           style={{
             backgroundColor: '#C5E1A5',
-            width: 370,
-            height: 100,
+            width: wp('90'),
+            height: hp('10'),
             borderRadius: 20,
             flexDirection: 'row',
             alignItems: 'center',
             margin: 20,
           }}>
           <Image
-            style={{width: 80, height: 80, left: 10}}
+            style={{width: wp('20%'), height: hp('10%'), left: 10}}
             source={require('../assets/icon/writing.png')}
           />
           <Text
             style={{
-              fontSize: 25,
+              fontSize: wp('7%'),
+
               left: 30,
               fontWeight: 'bold',
               color: '#1A237E',

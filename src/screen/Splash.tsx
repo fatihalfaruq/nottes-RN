@@ -7,7 +7,7 @@ import React from 'react';
 const Splash = () => {
   const navigation = useNavigation<NativeStackNavigationProp<Pindah>>();
   setTimeout(() => {
-    navigation.navigate('Homeapp');
+    navigation.replace('Homeapp');
   }, 2000);
   return (
     <View
