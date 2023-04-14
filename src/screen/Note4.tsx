@@ -105,13 +105,13 @@ const Note4 = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           {data.map((value, index) => (
             <View
+              key={index}
               style={{
                 flexDirection: 'row',
                 margin: 10,
                 width: 300,
               }}>
               <TouchableOpacity
-                key={index}
                 onPress={() => {
                   setText(value.item);
                   setIndex(index);
