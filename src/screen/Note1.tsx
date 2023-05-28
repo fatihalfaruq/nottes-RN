@@ -151,7 +151,6 @@ const Note1 = () => {
         style={{
           position: 'absolute',
           bottom: 20,
-          left: 42,
           width: wp('81%'),
           borderRadius: 30,
           flexDirection: 'row',
